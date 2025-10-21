@@ -1,0 +1,15 @@
+<h1>Détails conférence : {{ conference.name }}</h1>
+
+<ul>
+    <li><strong>Thème :</strong> {{ conference.get_theme_display }}</li>
+    <li><strong>Lieu :</strong> {{ conference.location }}</li>
+    <li><strong>Description :</strong> {{ conference.description }}</li>
+    <li><strong>Dates :</strong> {{ conference.start_date }} - {{ conference.ens_date }}</li>
+    <li><strong>Créée le :</strong> {{ conference.created_at }}</li>
+    <li><strong>Mis à jour le :</strong> {{ conference.updated_at }}</li>
+</ul>
+
+<p>
+    <a href="{% url 'liste_conferences' %}">← Retour à la liste</a> |
+    <a href="{% url 'conference_create' %}">Ajouter une conférence</a>
+</p>
