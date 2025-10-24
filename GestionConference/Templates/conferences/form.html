@@ -1,25 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+{% if view.object.pk %}
+<h1>Formulaire de modification de la conférence {{object.name}}</h1>
+{% else %}
 <h1>Formulaire d'ajout</h1>
-
+{% endif %}
 <form method="post">
     {% csrf_token %}
-
-    {% if form.non_field_errors %}
-        <div class="errors">
-            {{ form.non_field_errors }}
-        </div>
-    {% endif %}
-
-    {% for field in form %}
-        <p>
-            {{ field.label_tag }}<br>
-            {{ field }}
-            {{ field.errors }}
-        </p>
-    {% endfor %}
-
+    {{form.as_p}}
     <button type="submit">Enregistrer</button>
 </form>
 
 <p>
     <a href="{% url 'liste_conferences' %}">← Retour à la liste</a>
 </p>
+{% endblock %}

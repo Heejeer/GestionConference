@@ -5,11 +5,12 @@ from .views import (
     ConferenceCreate,
     ConferenceUpdate,
     ConferenceDelete,
+    ConferenceList,
 )
 
 urlpatterns = [
     # Liste
-    path("liste/", views.liste_conferences, name="liste_conferences"),
+    path("liste/",ConferenceList.as_view() , name="liste_conferences"),
 
     # Détails
     path("<int:pk>/", ConferenceDetails.as_view(), name="conference_details"),

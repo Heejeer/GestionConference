@@ -1,5 +1,6 @@
+{% extends 'base.html' %}
+{% block content %}
 <h1>La liste des conférences</h1>
-
 <table border="1">
     <tr>
         <th>Title</th>
@@ -29,3 +30,4 @@
 <p>
     <a href="{% url 'conference_create' %}">➕ Ajouter une conférence</a>
 </p>
+{% endblock %}

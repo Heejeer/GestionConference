@@ -1,3 +1,5 @@
+{% extends 'base.html' %}
+{% block content %}
 <h1>Détails conférence : {{ conference.name }}</h1>
 
 <ul>
@@ -10,6 +12,6 @@
 </ul>
 
 <p>
-    <a href="{% url 'liste_conferences' %}">← Retour à la liste</a> |
-    <a href="{% url 'conference_create' %}">Ajouter une conférence</a>
+    <a href="{% url 'liste_conferences' %}">← Retour à la liste</a> 
 </p>
+{% endblock %}
